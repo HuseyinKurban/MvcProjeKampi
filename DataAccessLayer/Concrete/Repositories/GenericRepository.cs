@@ -11,18 +11,25 @@ namespace DataAccessLayer.Concrete.Repositories
 {
     public class GenericRepository<T> : IRepository<T> where T : class
     {
-        Context c=new Context();
+        Context c = new Context();
         DbSet<T> _object;
 
         public GenericRepository()
         {
-            _object=c.Set<T>();
+            _object = c.Set<T>();
         }
 
         public void Delete(T p)
         {
             _object.Remove(p);
             c.SaveChanges();
+        }
+
+        public T Get(Expression<Func<T, bool>> filter)
+        {
+            //single or default = bir dizide veya listede geriye  sadece 1 değer döndüren ef linq methodurur.
+            return _object.SingleOrDefault(filter);
+
         }
 
         public void Insert(T p)
