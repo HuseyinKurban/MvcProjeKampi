@@ -19,7 +19,7 @@ namespace EntityLayer.Concrete
         public string CategoryDescription { get; set; }
 
         public bool CategoryStatus { get; set; }
-
+        //burası bir olan yer yani anahtar olan
         public ICollection<Heading> Headings { get; set; }
     }
 }

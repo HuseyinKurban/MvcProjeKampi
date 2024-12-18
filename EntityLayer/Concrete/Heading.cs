@@ -22,7 +22,7 @@ namespace EntityLayer.Concrete
 
         public int WriterID { get; set; }
         public virtual Writer Writer { get; set; }
-        //burası bir olan yer
+        //burası bir olan yer yani anahtar olan
         public ICollection<Content> Contents { get; set; }
 
     }
