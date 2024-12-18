@@ -16,13 +16,13 @@ namespace EntityLayer.Concrete
         public string HeadingName { get; set; }
 
         public DateTime HeadingDate { get; set; }
-
+        //bire cok ilişki , burası cok olan yer
         public int CategoryID { get; set; }
         public virtual Category Category { get; set; }
 
         public int WriterID { get; set; }
         public virtual Writer Writer { get; set; }
-
+        //burası bir olan yer
         public ICollection<Content> Contents { get; set; }
 
     }
