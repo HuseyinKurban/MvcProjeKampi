@@ -34,9 +34,10 @@ namespace MvcProjeKampi.Controllers
         {
             
             CategoryValidator categoryValidator= new CategoryValidator();
+            //fluent ile calısıcaz , validate=kontrol
             ValidationResult result= categoryValidator.Validate(p);
 
-            //sonuç geçerliyse
+            //sonuç geçerliyse,uygunsa
             if (result.IsValid)
             {
                 cm.CategoryAdd(p);
@@ -46,6 +47,7 @@ namespace MvcProjeKampi.Controllers
              {
                 foreach (var item in result.Errors)
                 {
+                    //modelin durumuna hataları ekle
                     ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
                 }
             }
