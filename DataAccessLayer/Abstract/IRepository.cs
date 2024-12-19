@@ -14,12 +14,16 @@ namespace DataAccessLayer.Abstract
 
         void Insert(T p);
 
+        //idye göre bulma
         T Get(Expression<Func<T, bool>> filter);
 
         void Update(T p);
 
         void Delete(T p);
+
         // şartlı listeleme
         List<T> List(Expression<Func<T, bool>> filter);
+
+
     }
 }

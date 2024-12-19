@@ -55,7 +55,5 @@ namespace MvcProjeKampi.Controllers
             cm.CategoryDelete(categoryvalue);
             return RedirectToAction("Index");
         }
-
-
     }
 }

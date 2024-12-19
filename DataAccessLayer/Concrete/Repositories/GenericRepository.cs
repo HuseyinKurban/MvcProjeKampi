@@ -21,6 +21,7 @@ namespace DataAccessLayer.Concrete.Repositories
 
         public void Delete(T p)
         {
+
             _object.Remove(p);
             c.SaveChanges();
         }
