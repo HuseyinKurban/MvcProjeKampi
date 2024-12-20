@@ -17,7 +17,8 @@ namespace DataAccessLayer.Concrete.Repositories
 
         public void Delete(Writer p)
         {
-            throw new NotImplementedException();
+            _object.Remove(p);
+            c.SaveChanges();
         }
 
         public Writer Get(Expression<Func<Writer, bool>> filter)
@@ -27,7 +28,8 @@ namespace DataAccessLayer.Concrete.Repositories
 
         public void Insert(Writer p)
         {
-            throw new NotImplementedException();
+            _object.Add(p);
+            c.SaveChanges();
         }
 
         public List<Writer> List()
@@ -42,7 +44,7 @@ namespace DataAccessLayer.Concrete.Repositories
 
         public void Update(Writer p)
         {
-            throw new NotImplementedException();
+            c.SaveChanges();
         }
     }
 }

@@ -1,0 +1,38 @@
+﻿@model EntityLayer.Concrete.Writer
+@{
+    ViewBag.Title = "AddWriter";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yeni Yazar Ekleme</h2>
+<br />
+@using (Html.BeginForm("AddWriter", "Writer", FormMethod.Post))
+{
+    <div class="form-group">
+        <label>Yazar Adı</label>
+        @Html.TextBoxFor(x => x.WriterName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.WriterName)
+        <br />
+        <label>Yazar Soyadı</label>
+        @Html.TextBoxFor(x => x.WriterSurName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.WriterSurName)
+        <br />
+        <label>Yazar Görsel</label>
+        @Html.TextBoxFor(x => x.WriterImage, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.WriterImage)
+        <br />
+        <label>Yazarın Hakkında</label>
+        @Html.TextBoxFor(x => x.WriterAbout, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.WriterAbout)
+        <br />
+        <label>Yazar Mail</label>
+        @Html.TextBoxFor(x => x.WriterMail, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.WriterMail)
+        <br />
+        <label>Yazar Şifre</label>
+        @Html.PasswordFor(x => x.WriterPassword, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.WriterPassword)
+        <br />
+        <button class="btn btn-primary">Yazarı Ekle</button>
+    </div>
+}
