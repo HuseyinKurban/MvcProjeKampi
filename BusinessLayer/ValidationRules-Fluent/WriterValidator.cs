@@ -11,6 +11,7 @@ namespace BusinessLayer.ValidationRules_Fluent
 {
     public class WriterValidator : AbstractValidator<Writer>
     {
+        //hakkımda kısmında 1 adet a olması zorunlu
         private bool IsAboutValid(string arg)
         {
             try
@@ -32,6 +33,7 @@ namespace BusinessLayer.ValidationRules_Fluent
             RuleFor(x => x.WriterMail).NotEmpty().WithMessage("Yazarın Mailini Boş Geçemezsiniz.");
             RuleFor(x => x.WriterPassword).NotEmpty().WithMessage("Yazarın Şifresini Boş Geçemezsiniz.");
             RuleFor(x => x.WriterAbout).NotEmpty().WithMessage("Yazarın Hakkında Bilgisini Boş Geçemezsiniz.");
+            RuleFor(x => x.WriterTitle).NotEmpty().WithMessage("Yazarın Ünvan Bilgisini Boş Geçemezsiniz.");
 
             RuleFor(x => x.WriterName).MaximumLength(50).WithMessage("Lütfen 50 Karakterden Fazla Değer Girişi Yapmayınız.");
             RuleFor(x => x.WriterSurName).MaximumLength(50).WithMessage("Lütfen 50 Karakterden Fazla Değer Girişi Yapmayınız.");

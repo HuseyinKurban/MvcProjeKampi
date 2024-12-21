@@ -1,17 +1,19 @@
 ﻿@model EntityLayer.Concrete.Writer
 @{
-    ViewBag.Title = "AddWriter";
+    ViewBag.Title = "UpdateWriter";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Yeni Yazar Ekleme</h2>
+<h2>Yazar Güncelleme</h2>
 <br />
-@using (Html.BeginForm("AddWriter", "Writer", FormMethod.Post))
+@using (Html.BeginForm("UpdateWriter", "Writer", FormMethod.Post))
 {
     <div class="form-group">
+        @Html.HiddenFor(x => x.WriterID)
         <label>Yazar Adı</label>
         @Html.TextBoxFor(x => x.WriterName, new { @class = "form-control" })
-        @Html.ValidationMessageFor(x => x.WriterName)
+        @Html.ValidationMessageFor(x => x.WriterName, "", new { @style = "color: red;" })
+
         <br />
         <label>Yazar Soyadı</label>
         @Html.TextBoxFor(x => x.WriterSurName, new { @class = "form-control" })
@@ -21,22 +23,23 @@
         @Html.TextBoxFor(x => x.WriterImage, new { @class = "form-control" })
         @Html.ValidationMessageFor(x => x.WriterImage)
         <br />
-        <label>Yazarın Hakkında</label>
-        @Html.TextBoxFor(x => x.WriterAbout, new { @class = "form-control" })
-        @Html.ValidationMessageFor(x => x.WriterAbout)
-        <br />
         <label>Yazarın Ünvanı</label>
         @Html.TextBoxFor(x => x.WriterTitle, new { @class = "form-control" })
         @Html.ValidationMessageFor(x => x.WriterTitle)
+        <br />
+        <label>Yazarın Hakkında</label>
+        @Html.TextBoxFor(x => x.WriterAbout, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.WriterAbout)
         <br />
         <label>Yazar Mail</label>
         @Html.TextBoxFor(x => x.WriterMail, new { @class = "form-control" })
         @Html.ValidationMessageFor(x => x.WriterMail)
         <br />
         <label>Yazar Şifre</label>
-        @Html.PasswordFor(x => x.WriterPassword, new { @class = "form-control" })
+        @Html.TextBoxFor(x => x.WriterPassword, new { @class = "form-control" })
         @Html.ValidationMessageFor(x => x.WriterPassword)
         <br />
-        <button class="btn btn-primary">Yazarı Ekle</button>
+        <button class="btn btn-warning">Yazarı Güncelle</button>
     </div>
 }
+
