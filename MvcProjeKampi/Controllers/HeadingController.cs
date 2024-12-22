@@ -18,7 +18,7 @@ namespace MvcProjeKampi.Controllers
 
         public ActionResult Index()
         {
-            var values=hm.GetList();
+            var values = hm.GetList();
             return View(values);
         }
 
@@ -31,16 +31,16 @@ namespace MvcProjeKampi.Controllers
                                                       Text = x.CategoryName,
                                                       Value = x.CategoryID.ToString()
                                                   }).ToList();
-            ViewBag.vlc=valuecategory;
+            ViewBag.vlc = valuecategory;
 
-            List<SelectListItem> valuewriter=(from x in wm.GetList()
-                                              select new SelectListItem
-                                              {
-                                                  Text = x.WriterName+" "+x.WriterSurName,
-                                                  Value = x.WriterID.ToString()
-                                              }).ToList() ;
+            List<SelectListItem> valuewriter = (from x in wm.GetList()
+                                                select new SelectListItem
+                                                {
+                                                    Text = x.WriterName + " " + x.WriterSurName,
+                                                    Value = x.WriterID.ToString()
+                                                }).ToList();
 
-            ViewBag.vlw=valuewriter;
+            ViewBag.vlw = valuewriter;
 
             return View();
         }
@@ -52,6 +52,35 @@ namespace MvcProjeKampi.Controllers
             return RedirectToAction("Index");
         }
 
-      
+        [HttpGet]
+        public ActionResult EditHeading(int id)
+        {
+            List<SelectListItem> valuecategory = (from x in cm.GetList()
+                                                  select new SelectListItem
+                                                  {
+                                                      Text = x.CategoryName,
+                                                      Value = x.CategoryID.ToString()
+                                                  }).ToList();
+            ViewBag.vlc = valuecategory;
+
+            var value = hm.GetByID(id);
+            return View(value);
+        }
+
+        [HttpPost]
+        public ActionResult EditHeading(Heading p)
+        {
+            hm.HeadingUpdate(p);
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult DeleteHeading(int id)
+        {
+            var value = hm.GetByID(id);
+            value.HeadingStatus=false;
+            hm.HeadingDelete(value);
+            return RedirectToAction("Index");
+
+        }
     }
 }

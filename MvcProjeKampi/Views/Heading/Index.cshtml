@@ -5,6 +5,7 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
     int i = 0;
     string color = "";
+    string color2 = "";
 }
 
 <!DOCTYPE html>
@@ -38,10 +39,13 @@
                             <th style="width: 20%">
                                 Başlık Adı
                             </th>
-                            <th style="width: 30%">
+                            <th style="width: 20%">
                                 Oluşturan Yazar
                             </th>
-                            <th style="width: 8%" class="text-center">
+                            <th style="width: 10%"class="text-center">
+                                Durum
+                            </th>
+                            <th style="width: 10%" class="text-center">
                                 Kategori
                             </th>
                             <th style="width: 20%">
@@ -73,6 +77,15 @@
                             color = "badge badge-secondary";
                         }
 
+                        if(item.HeadingStatus==true)
+                        {
+                            color2 = "badge badge-success";
+                        }
+                        else
+                        {
+                            color2 = "badge badge-danger";
+                        }
+
 
 
                         <tbody>
@@ -97,6 +110,9 @@
                                         </li>
                                     </ul>
                                 </td>
+                                <td class="project-state">
+                                    <span class="@color2">@(item.HeadingStatus ? "Aktif":"Pasif")</span>
+                                </td>
 
                                 <td class="project-state">
                                     <span class="@color">@item.Category.CategoryName</span>
@@ -108,12 +124,12 @@
                                         </i>
                                         İçerik
                                     </a>
-                                    <a class="btn btn-info btn-sm" href="#">
+                                    <a class="btn btn-info btn-sm" href="/Heading/EditHeading/@item.HeadingID">
                                         <i class="fas fa-pencil-alt">
                                         </i>
                                         Düzenle
                                     </a>
-                                    <a class="btn btn-danger btn-sm" href="#">
+                                    <a class="btn btn-danger btn-sm" href="/Heading/DeleteHeading/@item.HeadingID">
                                         <i class="fas fa-trash">
                                         </i>
                                         Sil

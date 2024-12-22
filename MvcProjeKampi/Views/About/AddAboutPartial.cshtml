@@ -1,0 +1,30 @@
+﻿<div class="modal" id="Modal1">
+    @*clası modal olcak idsi butondakiyle eşit olcak*@
+    <div class="modal-dialog">
+        <div class="modal-content">
+            @*içerik alanı*@
+            <div class="modal-header">
+                @*başlık alanı*@
+                <h2 class="modal-title">Hakkımızda Yazı Girişi</h2>@*başlık*@
+            </div>
+            <form method="post" action="/About/AddAbout">
+                <div class="modal-body">
+                    @*gövde kısmı*@
+                    <label>Hakkımda Metin 1</label>
+                    <input type="text" name="AboutDetails1" class="form-control" />
+                    <br />
+                    <label>Hakkımda Metin 2</label>
+                    <input type="text" name="AboutDetails2" class="form-control" />
+                    <br />
+                    <label>Hakkımda Görsel 1</label>
+                    <input type="text" name="AboutImage1" class="form-control" />
+                    <br />
+                    <label>Hakkımda Görsel 2</label>
+                    <input type="text" name="AboutImage2" class="form-control" />
+                    <br />
+                    <button class="btn btn-info">Kaydet</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
