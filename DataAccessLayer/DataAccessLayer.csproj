@@ -76,6 +76,14 @@
     <Compile Include="Migrations\202412202107207_mig_writer_edit.Designer.cs">
       <DependentUpon>202412202107207_mig_writer_edit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202412222048230_contentstatus.cs" />
+    <Compile Include="Migrations\202412222048230_contentstatus.Designer.cs">
+      <DependentUpon>202412222048230_contentstatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202412222058484_headingstatus.cs" />
+    <Compile Include="Migrations\202412222058484_headingstatus.Designer.cs">
+      <DependentUpon>202412222058484_headingstatus.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -95,6 +103,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202412202107207_mig_writer_edit.resx">
       <DependentUpon>202412202107207_mig_writer_edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202412222048230_contentstatus.resx">
+      <DependentUpon>202412222048230_contentstatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202412222058484_headingstatus.resx">
+      <DependentUpon>202412222058484_headingstatus.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

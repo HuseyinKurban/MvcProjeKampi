@@ -13,10 +13,21 @@
         @Html.Label("Kategori Adı")
         @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })
         @Html.ValidationMessageFor(x => x.CategoryName)
-        <br /><br />
+        <br />
         @Html.Label("Açıklama")
         @Html.TextAreaFor(x => x.CategoryDescription, new { @class = "form-control" })
         @Html.ValidationMessageFor(x => x.CategoryDescription)
+        <br />
+        @Html.Label("Durum")
+        @Html.DropDownListFor(
+    x => x.CategoryStatus,
+    new SelectList(new List<SelectListItem>
+    {
+        new SelectListItem { Text = "Aktif", Value = "True" },
+        new SelectListItem { Text = "Pasif", Value = "False" }
+    }, "Value", "Text" ),
+    new { @class = "form-control" }
+)
         <br />
         <button class="btn btn-info">Kaydet</button>
 

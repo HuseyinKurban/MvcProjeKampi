@@ -16,6 +16,9 @@ namespace EntityLayer.Concrete
         public string ContentValue { get; set; }
 
         public DateTime ContentDate { get; set; }
+
+        public bool ContentStatus { get; set; }
+
         //bire cok ilişkinin cok olan tarafı
         public int HeadingID { get; set; }
         public virtual Heading Heading { get; set; }

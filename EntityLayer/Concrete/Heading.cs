@@ -15,6 +15,8 @@ namespace EntityLayer.Concrete
         [StringLength(50)]
         public string HeadingName { get; set; }
 
+        public bool HeadingStatus { get; set; }
+
         public DateTime HeadingDate { get; set; }
         //bire cok ilişki , burası cok olan yer
         public int CategoryID { get; set; }
