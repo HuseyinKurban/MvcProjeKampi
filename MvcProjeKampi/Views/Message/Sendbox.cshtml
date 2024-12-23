@@ -1,7 +1,7 @@
-﻿@using EntityLayer.Concrete
-@model List<Contact>
+﻿﻿@using EntityLayer.Concrete
+@model List<Message>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Sendbox";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 <!DOCTYPE html>
@@ -9,12 +9,13 @@
 <body class="hold-transition sidebar-mini">
     <!-- Content Wrapper. Contains page content -->
     <!-- Content Header (Page header) -->
-    <section class="content-header" >
+    <section class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
-                <div class="col-sm-6" style="margin-top:24px;">
+                <div class="col-sm-6">
                     <h1>Mesaj Sayfası</h1>
                 </div>
+
             </div>
         </div><!-- /.container-fluid -->
     </section>
@@ -31,7 +32,7 @@
             <div class="col-md-9">
                 <div class="card card-primary card-outline">
                     <div class="card-header">
-                        <h3 class="card-title">Gelen Mesajlar</h3>
+                        <h3 class="card-title">Gönderilen Mesajlar</h3>
                         <div class="card-tools">
                             <div class="input-group input-group-sm">
                                 <input type="text" class="form-control" placeholder="Mail Kutusunda Ara">
@@ -83,12 +84,12 @@
                                                 </div>
                                             </td>
                                             <td class="mailbox-star"><a href="#"><i class="fas fa-star text-warning"></i></a></td>
-                                            <td class="mailbox-name"><a href="/Contact/GetContactDetails/@item.ContactID">@item.UserName</a></td>
+                                            <td class="mailbox-name"><a href="/Contact/GetContactDetails/@item.MessageID">@item.ReceiverMail</a></td>
                                             <td class="mailbox-subject">
-                                                <b>@item.Subject</b> - @(item.Message.Length<=40 ? item.Message : item.Message.Substring(0,40)+"...")
+                                                <b>@item.Subject</b> - @(item.MessageContent.Length<=40 ? item.MessageContent : item.MessageContent.Substring(0,40)+"...")
                                             </td>
                                             <td class="mailbox-attachment"></td>
-                                            <td class="mailbox-date">5 mins ago</td>
+                                            <td class="mailbox-date">@item.MessageDate.ToString("dd-MMM-yyyy")</td>
                                         </tr>
                                     }
                                 </tbody>
@@ -131,3 +132,4 @@
     </section>
 </body>
 </html>
+
