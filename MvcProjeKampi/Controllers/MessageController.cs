@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
+using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,17 @@ namespace MvcProjeKampi.Controllers
         {
             var values = mm.GetListSendbox();
             return View(values);
+        }
+        [HttpGet]
+        public ActionResult NewMessage()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult NewMessage(Message p)
+        {
+            mm.MessageAdd(p);
+            return RedirectToAction("Sendbox");
         }
 
     }
