@@ -6,31 +6,56 @@
     int count = 0;
 }
 
-<br />
-<table class="table table-bordered">
-    <tr>
-        <th>#</th>
-        <th>Kategori</th>
-        <th>Durum</th>
-        <th>Sil</th>
-        <th>Güncelle</th>
-        <th>Başlıklar</th>
 
-    </tr>
-    @foreach (var item in Model)
-    {
-        count++;
-        <tr>
-            <th>@count</th>
-            <td>@item.CategoryName</td>
-            <td>@(item.CategoryStatus ? "Aktif" :"Pasif")</td>
-            <td><a href="/AdminCategory/DeleteCategory/@item.CategoryID" class="btn btn-danger">Sil</a></td>
-            <td><a href="/AdminCategory/UpdateCategory/@item.CategoryID" class="btn btn-warning">Güncelle</a></td>
-            <td><a href="#" class="btn btn-primary">Başlıklar</a></td>
+<h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333; text-align: center; margin-bottom: 20px;">Kategori Yönetimi</h1>
 
+
+<table style="width: 100%; border-collapse: collapse; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); background-color: #fff; border-radius: 8px;">
+    <thead>
+        <tr style="background-color: #007bff; color: white; font-weight: bold;">
+            <th style="padding: 12px; text-align: left;">#</th>
+            <th style="padding: 12px; text-align: left;">Kategori</th>
+            <th style="padding: 12px; text-align: left;">Durum</th>
+            <th style="padding: 12px; text-align: center;">Sil</th>
+            <th style="padding: 12px; text-align: center;">Güncelle</th>
+            <th style="padding: 12px; text-align: center;">Başlıklar</th>
         </tr>
-    }
-
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            count++;
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 12px;">@count</td>
+                <td style="padding: 12px;">@item.CategoryName</td>
+                <td style="padding: 12px;">@(item.CategoryStatus ? "Aktif" : "Pasif")</td>
+                <td style="padding: 12px; text-align: center;">
+                
+                    <a href="/AdminCategory/DeleteCategory/@item.CategoryID" class="btn btn-danger" style="padding: 8px 12px; font-size: 16px;">
+                        Sil
+                    </a>
+                </td>
+                <td style="padding: 12px; text-align: center;">
+                  
+                    <a href="/AdminCategory/UpdateCategory/@item.CategoryID" class="btn btn-warning" style="padding: 8px 12px; font-size: 16px;">
+                        Güncelle
+                    </a>
+                </td>
+                <td style="padding: 12px; text-align: center;">
+                   
+                    <a href="#" class="btn btn-primary" style="padding: 8px 12px; font-size: 16px;">
+                        Başlıklar
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
 </table>
 
-<a href="/AdminCategory/AddCategory" class="btn btn-primary">Yeni Kategori Ekle</a>
+
+<div style=" margin-top: 20px;">
+    
+    <a href="/AdminCategory/AddCategory" class="btn btn-success" style="padding: 10px 20px; font-size: 16px;">
+        Yeni Kategori Ekle
+    </a>
+</div>

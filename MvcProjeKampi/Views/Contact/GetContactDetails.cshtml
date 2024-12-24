@@ -13,7 +13,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Gelen Kutusu</h1>
+                    <h1>İletişim Sayfası Mesaj Kutusu</h1>
                 </div>
 
             </div>
@@ -48,7 +48,7 @@
                                     <br />
                                     <h6>
                                         Mail: @Model.UserMail
-                                        <span class="mailbox-read-time float-right">15 Feb. 2015 11:03 PM</span>
+                                        <span class="mailbox-read-time float-right">@Model.ContactDate.ToString("dd-MMM-yyyy")</span>
                                     </h6>
                                 </div>
                                 <!-- /.mailbox-read-info -->
