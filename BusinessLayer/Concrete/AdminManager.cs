@@ -47,5 +47,10 @@ namespace BusinessLayer.Concrete
         {
             throw new NotImplementedException();
         }
+
+        public Admin GetRole(string username)
+        {
+            return _adminDal.Get(x => x.AdminUserName == username);
+        }
     }
 }

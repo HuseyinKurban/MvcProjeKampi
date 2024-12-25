@@ -13,7 +13,8 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class
     with font-awesome or any other icon font library -->
-
+            @if(User.IsInRole("B"))
+            {
             <li class="nav-item">
                 <a href="/AdminCategory/Index" class="nav-link">
                     <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -140,8 +141,8 @@
                         Çıkış yap
                     </p>
                 </a>
-
             </li>
+            }
         </ul>
     </nav>
     <!-- /.sidebar-menu -->
