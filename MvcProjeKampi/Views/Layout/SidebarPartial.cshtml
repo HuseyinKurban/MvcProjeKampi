@@ -13,8 +13,7 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class
     with font-awesome or any other icon font library -->
-            @if(User.IsInRole("B"))
-            {
+
             <li class="nav-item">
                 <a href="/AdminCategory/Index" class="nav-link">
                     <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -76,72 +75,74 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav-item has-treeview">
-                <a href="/About/Index" class="nav-link">
-                    <i class="nav-icon fas fa-tree"></i>
-                    <p>
-                        Hakkımızda
-                    </p>
-                </a>
-            </li>
-            <li class="nav-item has-treeview">
-                <a href="/Contact/Index" class="nav-link">
-                    <i class="nav-icon fas fa-edit"></i>
-                    <p>
-                        İletişim & Mesajlar
-                    </p>
-                </a>
-            </li>
-            <li class="nav-item has-treeview">
-                <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-table"></i>
-                    <p>
-                        Yazılar
-                    </p>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-calendar-alt"></i>
-                    <p>
-                        Yetkilendirmeler
-                    </p>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="/Gallery/Index" class="nav-link">
-                    <i class="nav-icon far fa-image"></i>
-                    <p>
-                        Galeri
-                    </p>
-                </a>
-            </li>
-            <li class="nav-item has-treeview">
-                <a href="/ErrorPage/Page404" class="nav-link">
-                    <i class="nav-icon far fa-envelope"></i>
-                    <p>
-                        Hata Sayfaları
+            @if (User.IsInRole("B"))
+            {
+                <li class="nav-item has-treeview">
+                    <a href="/About/Index" class="nav-link">
+                        <i class="nav-icon fas fa-tree"></i>
+                        <p>
+                            Hakkımızda
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="/Contact/Index" class="nav-link">
+                        <i class="nav-icon fas fa-edit"></i>
+                        <p>
+                            İletişim & Mesajlar
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-table"></i>
+                        <p>
+                            Yazılar
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-calendar-alt"></i>
+                        <p>
+                            Yetkilendirmeler
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/Gallery/Index" class="nav-link">
+                        <i class="nav-icon far fa-image"></i>
+                        <p>
+                            Galeri
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="/ErrorPage/Page404" class="nav-link">
+                        <i class="nav-icon far fa-envelope"></i>
+                        <p>
+                            Hata Sayfaları
 
-                    </p>
-                </a>
-            </li>
-            <li class="nav-item has-treeview">
-                <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-book"></i>
-                    <p>
-                        Siteye Git
-                    </p>
-                </a>
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-book"></i>
+                        <p>
+                            Siteye Git
+                        </p>
+                    </a>
 
-            </li>
-            <li class="nav-item has-treeview">
-                <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-door-closed"></i>
-                    <p>
-                        Çıkış yap
-                    </p>
-                </a>
-            </li>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-door-closed"></i>
+                        <p>
+                            Çıkış yap
+                        </p>
+                    </a>
+                </li>
             }
         </ul>
     </nav>
