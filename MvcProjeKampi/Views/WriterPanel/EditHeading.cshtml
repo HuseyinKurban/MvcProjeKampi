@@ -1,0 +1,38 @@
+﻿@model EntityLayer.Concrete.Heading
+@{
+    ViewBag.Title = "EditHeading";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+<div class="card card-primary">
+    <div class="card-header">
+        <h3 class="card-title">Başlık Bilgilerini Güncelle</h3>
+    </div>
+    @using (Html.BeginForm("EditHeading", "WriterPanel", FormMethod.Post))
+    {
+        <div class="card-body">
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        @Html.HiddenFor(x => x.HeadingID)
+                        @Html.HiddenFor(x => x.HeadingDate)
+                        @Html.HiddenFor(x => x.WriterID)
+
+
+                        @Html.Label("Başlık Adı")
+                        @Html.TextBoxFor(x => x.HeadingName, new { @class = "form-control", placeholder = "Başlığın adını yazınız" })
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        @Html.Label("Kategori")
+                        @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.vlc, new { @class = "form-control" })
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <button type="submit" class="btn btn-warning">Güncelle</button>
+        </div>
+    }
+</div>
