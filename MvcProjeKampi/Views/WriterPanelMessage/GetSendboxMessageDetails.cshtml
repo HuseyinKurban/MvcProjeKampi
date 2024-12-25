@@ -1,7 +1,7 @@
 ﻿@model EntityLayer.Concrete.Message
 @{
-    ViewBag.Title = "GetInboxMessageDetails";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "GetSendboxMessageDetails";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -20,6 +20,7 @@
     <script src="~/AdminLTE-3.0.4/plugins/summernote/summernote.min.js"></script>
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -62,7 +63,7 @@
                                 <h5>Konu : @Model.Subject</h5>
                                 <br />
                                 <h6>
-                                    Mail Adresi : @Model.SenderMail
+                                    Mail Adresi : @Model.ReceiverMail
                                     <span class="mailbox-read-time float-right">@Model.MessageDate.ToString("dd-MMM-yyyy")</span>
                                 </h6>
                             </div>
@@ -70,7 +71,7 @@
                             <!-- /.mailbox-controls -->
                             <div class="form-group">
 
-                                <textarea id="compose-textarea" class="form-control" readonly></textarea>
+                                <textarea id="compose-textarea" class="form-control" style="height: 300px" readonly></textarea>
 
                             </div>
                             <!-- /.mailbox-read-message -->
@@ -106,8 +107,11 @@ $(document).ready(function () {
 
     // Summernote editörünü sadece okunabilir yapmak
     $('#compose-textarea').summernote('disable');
-
 });
     </script>
 
 </body>
+
+
+
+

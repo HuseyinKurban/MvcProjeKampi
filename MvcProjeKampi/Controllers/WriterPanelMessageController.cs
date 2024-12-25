@@ -11,15 +11,24 @@ using System.Web.Mvc;
 
 namespace MvcProjeKampi.Controllers
 {
-    public class MessageController : Controller
+    public class WriterPanelMessageController : Controller
     {
-        // GET: Message
+        // GET: WriterPanelMessage
         MessageManager mm = new MessageManager(new EfMessageDal());
-        MessageValidator messagevalidator= new MessageValidator();
+        MessageValidator messagevalidator = new MessageValidator();
+
+        public PartialViewResult MessageListMenu()
+        {
+            ViewBag.gelen = mm.GetListInbox().Count();
+            ViewBag.giden = mm.GetListSendbox().Count();
+
+            return PartialView();
+        }
 
         public ActionResult Inbox()
         {
             var values = mm.GetListInbox();
+            
             return View(values);
         }
 
@@ -27,32 +36,6 @@ namespace MvcProjeKampi.Controllers
         {
             var values = mm.GetListSendbox();
             return View(values);
-        }
-
-        [HttpGet]
-        public ActionResult NewMessage()
-        {
-            return View();
-        }
-        [HttpPost]
-        [ValidateInput(false)]
-        public ActionResult NewMessage(Message p)
-        {
-            ValidationResult result = messagevalidator.Validate(p);
-            if (result.IsValid)
-            {
-                p.MessageDate= DateTime.Now;
-                mm.MessageAdd(p);
-                return RedirectToAction("Sendbox");
-            }
-            else
-            {
-                foreach (var item in result.Errors)
-                {
-                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
-                }
-            }
-            return View();
         }
 
         public ActionResult GetInboxMessageDetails(int id)
@@ -66,8 +49,31 @@ namespace MvcProjeKampi.Controllers
             var values = mm.GetByID(id);
             return View(values);
         }
+        [HttpGet]
+        public ActionResult NewMessage()
+        {
+            return View();
+        }
 
-
-
+        [HttpPost]
+        [ValidateInput(false)]
+        public ActionResult NewMessage(Message p)
+        {
+            ValidationResult result = messagevalidator.Validate(p);
+            if (result.IsValid)
+            {
+                p.MessageDate = DateTime.Now;
+                mm.MessageAdd(p);
+                return RedirectToAction("Sendbox");
+            }
+            else
+            {
+                foreach (var item in result.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+            return View();
+        }
     }
 }

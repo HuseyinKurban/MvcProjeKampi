@@ -13,6 +13,8 @@ namespace BusinessLayer.Abstract
         //idye göre liste döndürme
         List<Content> GetListByHeadingID(int id);
 
+        List<Content> GetListByWriterID();
+
         void ContentAdd(Content content);
 
         Content GetByID(int id);
