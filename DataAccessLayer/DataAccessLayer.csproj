@@ -56,6 +56,7 @@
     <Compile Include="Abstract\IContactDal.cs" />
     <Compile Include="Abstract\IContentDal.cs" />
     <Compile Include="Abstract\IHeadingDal.cs" />
+    <Compile Include="Abstract\IImageFileDal.cs" />
     <Compile Include="Abstract\IMessageDal.cs" />
     <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="Abstract\IWriterDal.cs" />
@@ -68,6 +69,7 @@
     <Compile Include="EntityFramework\EfContactDal.cs" />
     <Compile Include="EntityFramework\EfContentDal.cs" />
     <Compile Include="EntityFramework\EfHeadingDal.cs" />
+    <Compile Include="EntityFramework\EfImageFileDal.cs" />
     <Compile Include="EntityFramework\EfMessageDal.cs" />
     <Compile Include="EntityFramework\EfWriterDal.cs" />
     <Compile Include="Migrations\202411261416007_mig1.cs" />
@@ -89,6 +91,14 @@
     <Compile Include="Migrations\202412231737519_mig_message_sinif.cs" />
     <Compile Include="Migrations\202412231737519_mig_message_sinif.Designer.cs">
       <DependentUpon>202412231737519_mig_message_sinif.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202412251509169_imagefile.cs" />
+    <Compile Include="Migrations\202412251509169_imagefile.Designer.cs">
+      <DependentUpon>202412251509169_imagefile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202412251541416_admin.cs" />
+    <Compile Include="Migrations\202412251541416_admin.Designer.cs">
+      <DependentUpon>202412251541416_admin.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -118,6 +128,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202412231737519_mig_message_sinif.resx">
       <DependentUpon>202412231737519_mig_message_sinif.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202412251509169_imagefile.resx">
+      <DependentUpon>202412251509169_imagefile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202412251541416_admin.resx">
+      <DependentUpon>202412251541416_admin.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
