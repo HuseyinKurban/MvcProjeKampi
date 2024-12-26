@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Concrete;
+using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using System;
 using System.Collections.Generic;
@@ -12,11 +13,30 @@ namespace MvcProjeKampi.Controllers
     {
         // GET: WriterPanelContent
         ContentManager cm = new ContentManager(new EfContentDal());
+      
 
-        public ActionResult MyContent()
+        public ActionResult MyContent(string p)
         {
-            var values = cm.GetListByWriterID();
+            // Session kontrolü
+            p = (string)Session["WriterMail"];
+            if (string.IsNullOrEmpty(p)) // Eğer Session'da mail yoksa
+            {
+                return RedirectToAction("WriterLogin", "Login");
+            }
+
+            // id kontrolü
+            var writeridinfo = cm.GetWriterIdByMail(p) ?? 0;
+            if (writeridinfo == 0) // Eğer Writer ID bulunamazsa
+            {
+                return RedirectToAction("WriterLogin", "Login");
+            }
+
+            
+            var values = cm.GetListByWriterID(writeridinfo);
             return View(values);
         }
+
+
+
     }
 }

@@ -11,7 +11,7 @@ namespace BusinessLayer.Abstract
     {
         List<Heading> GetList();
 
-        List<Heading> GetListByWriter();
+        List<Heading> GetListByWriter(int id,bool durum);
 
         void HeadingAdd(Heading heading);
 
@@ -20,5 +20,7 @@ namespace BusinessLayer.Abstract
         void HeadingDelete(Heading heading);
 
         void HeadingUpdate(Heading heading);
+
+        int GetWriterIdByMail(string mail); // WriterID döndürmek için
     }
 }

@@ -11,6 +11,8 @@ namespace BusinessLayer.Abstract
     {
         List<Writer> GetList();
 
+        Writer GetWriter(string mail, string password);
+
         void WriterAdd(Writer writer);
         //idye göre getirme,bulma
         Writer GetByID(int id);

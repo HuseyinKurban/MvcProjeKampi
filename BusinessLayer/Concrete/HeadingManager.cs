@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
+using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,8 @@ namespace BusinessLayer.Concrete
             _headingDal = headingDal;
         }
 
+        public object Session { get; private set; }
+
         public Heading GetByID(int id)
         {
             return _headingDal.Get(x => x.HeadingID == id);
@@ -29,9 +32,17 @@ namespace BusinessLayer.Concrete
             return _headingDal.List();
         }
 
-        public List<Heading> GetListByWriter()
+        public List<Heading> GetListByWriter(int id, bool durum)
         {
-            return _headingDal.List(x => x.WriterID == 4);
+            return _headingDal.List(x => x.WriterID == id && x.HeadingStatus==durum);
+        }
+
+        public int GetWriterIdByMail(string mail)
+        {
+            return  _headingDal.List(x => x.Writer.WriterMail == mail)
+                                  .Select(y => y.WriterID)
+                                  .FirstOrDefault();
+           
         }
 
         public void HeadingAdd(Heading heading)

@@ -13,7 +13,7 @@ namespace BusinessLayer.Abstract
         //idye göre liste döndürme
         List<Content> GetListByHeadingID(int id);
 
-        List<Content> GetListByWriterID();
+        List<Content> GetListByWriterID(int id);
 
         void ContentAdd(Content content);
 
@@ -23,6 +23,8 @@ namespace BusinessLayer.Abstract
 
         void ContentUpdate(Content content);
 
-        
+         int? GetWriterIdByMail(string mail); // WriterID döndürmek için
+
+
     }
 }

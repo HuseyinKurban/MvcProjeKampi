@@ -15,6 +15,8 @@ namespace MvcProjeKampi.Controllers
         }
         public ActionResult SidebarPartial()
         {
+            var p = (string)Session["AdminUserName"];
+            ViewBag.isim = p;
             return PartialView();
         }
         public ActionResult ScriptPartial()

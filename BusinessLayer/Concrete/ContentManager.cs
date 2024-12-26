@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
+using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -48,9 +49,17 @@ namespace BusinessLayer.Concrete
             return _contentDal.List(x => x.HeadingID == id);
         }
 
-        public List<Content> GetListByWriterID()
+        public List<Content> GetListByWriterID(int id)
         {
-            return _contentDal.List(x => x.WriterID == 4);
+            return _contentDal.List(x => x.WriterID == id);
+        }
+
+        public int? GetWriterIdByMail(string mail)
+        {
+
+            return _contentDal.List(x => x.Writer.WriterMail == mail)
+                                  .Select(y => y.WriterID)
+                                  .FirstOrDefault();
         }
     }
 }

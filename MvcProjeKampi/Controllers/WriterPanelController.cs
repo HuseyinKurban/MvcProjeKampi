@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Concrete;
+using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using System;
@@ -9,21 +10,27 @@ using System.Web.Mvc;
 
 namespace MvcProjeKampi.Controllers
 {
+   
     public class WriterPanelController : Controller
     {
         // GET: WriterPanel
         HeadingManager hm = new HeadingManager(new EfHeadingDal());
         CategoryManager cm = new CategoryManager(new EfCategoryDal());
+        
 
         public ActionResult WriterProfile()
         {
             return View();
         }
 
-        public ActionResult MyHeading()
+        public ActionResult MyHeading(string p)
         {
-          
-            var values = hm.GetListByWriter();
+
+            //var writeridinfo = c.Writers.Where(x => x.WriterMail == p).Select(y => y.WriterID).FirstOrDefault(); bunun yerine katmanlı mimariye tasıdım
+
+            p = (string)Session["WriterMail"];
+            var writeridinfo=hm.GetWriterIdByMail(p);
+            var values = hm.GetListByWriter(writeridinfo,true);
             return View(values);
         }
         [HttpGet]
@@ -42,9 +49,12 @@ namespace MvcProjeKampi.Controllers
         [HttpPost]
         public ActionResult NewHeading(Heading p)
         {
+            var d = (string)Session["WriterMail"];
+            var writeridinfo = hm.GetWriterIdByMail(d);
+
+            p.WriterID = writeridinfo;
             p.HeadingDate = DateTime.Now;
             p.HeadingStatus = true;
-            p.WriterID = 4;
             hm.HeadingAdd(p);
             return RedirectToAction("MyHeading");
         }
