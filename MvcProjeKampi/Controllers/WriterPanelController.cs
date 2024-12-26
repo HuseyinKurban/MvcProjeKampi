@@ -90,5 +90,13 @@ namespace MvcProjeKampi.Controllers
 
         }
 
+        public ActionResult AllHeading()
+        {
+            var head=hm.GetList();
+            return View(head);
+        }
+
+       
+
     }
 }
