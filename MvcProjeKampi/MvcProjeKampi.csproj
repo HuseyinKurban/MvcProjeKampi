@@ -2650,6 +2650,7 @@
     <Content Include="Views\Home\HomePageHeader.cshtml" />
     <Content Include="Views\Home\HomePageTechnology.cshtml" />
     <Content Include="Views\Home\HomePageServices.cshtml" />
+    <Content Include="Views\Home\HomePageGallery.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

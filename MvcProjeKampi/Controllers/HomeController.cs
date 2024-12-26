@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BusinessLayer.Concrete;
+using DataAccessLayer.EntityFramework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,6 +11,7 @@ namespace MvcProjeKampi.Controllers
     [AllowAnonymous]
     public class HomeController : Controller
     {
+        ImageFileManager ifm = new ImageFileManager(new EfImageFileDal());
         public ActionResult Index()
         {
             return View();
@@ -56,6 +59,12 @@ namespace MvcProjeKampi.Controllers
         public PartialViewResult HomePageServices()
         {
             return PartialView();
+        }
+
+        public PartialViewResult HomePageGallery()
+        {
+            var values = ifm.GetList();
+            return PartialView(values);
         }
 
     }
