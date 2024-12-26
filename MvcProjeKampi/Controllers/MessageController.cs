@@ -11,24 +11,43 @@ using System.Web.Mvc;
 
 namespace MvcProjeKampi.Controllers
 {
+    [AllowAnonymous]
     public class MessageController : Controller
     {
         // GET: Message
         MessageManager mm = new MessageManager(new EfMessageDal());
-        MessageValidator messagevalidator= new MessageValidator();
+        MessageValidator messagevalidator = new MessageValidator();
 
         public ActionResult Inbox()
         {
-            string mail = (string)Session["WriterMail"];
-            var values = mm.GetListInbox(mail);
-            return View(values);
+            string mail = (string)Session["AdminUserName"];
+            
+            if (mail != null)
+            {
+                var values = mm.GetListInbox(mail);
+                return View(values);
+            }
+            else
+            {
+               return RedirectToAction("Index", "Login");
+            }
         }
+
 
         public ActionResult Sendbox()
         {
-            string mail = (string)Session["WriterMail"];
-            var values = mm.GetListSendbox(mail);
-            return View(values);
+            string mail = (string)Session["AdminUserName"];
+            
+            if (mail != null)
+            {
+                var values = mm.GetListSendbox(mail);
+                return View(values);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Login");
+            }
+          
         }
 
         [HttpGet]
@@ -43,7 +62,7 @@ namespace MvcProjeKampi.Controllers
             ValidationResult result = messagevalidator.Validate(p);
             if (result.IsValid)
             {
-                p.MessageDate= DateTime.Now;
+                p.MessageDate = DateTime.Now;
                 mm.MessageAdd(p);
                 return RedirectToAction("Sendbox");
             }
