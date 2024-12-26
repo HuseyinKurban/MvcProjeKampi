@@ -9,19 +9,83 @@ using System.Web;
 using System.Web.Mvc;
 using PagedList.Mvc;
 using PagedList;
+using BusinessLayer.ValidationRules_Fluent;
+using FluentValidation.Results;
 
 namespace MvcProjeKampi.Controllers
 {
-   
+
     public class WriterPanelController : Controller
     {
         // GET: WriterPanel
         HeadingManager hm = new HeadingManager(new EfHeadingDal());
         CategoryManager cm = new CategoryManager(new EfCategoryDal());
-        
+        WriterManager wm = new WriterManager(new EfWriterDal());
+        WriterValidator writerValidator = new WriterValidator();
+        Context c = new Context();
 
+        [HttpGet]
         public ActionResult WriterProfile()
         {
+
+            int id = 0;
+            string p = (string)Session["WriterMail"];
+
+            if (p != null)
+            {
+              
+                id = c.Writers.Where(x => x.WriterMail == p).Select(y => y.WriterID).FirstOrDefault();
+
+              
+                var writervalue = wm.GetByID(id);
+
+                // Yazar bilgilerini View'a gönder
+                return View(writervalue);
+            }
+            else
+            {
+                
+                return RedirectToAction("WriterLogin", "Login");
+            }
+
+
+            //string p = (string)Session["WriterMail"];
+
+            //if (p != null)
+            //{
+            //    var values = hm.GetWriterIdByMail(p);
+            //    ViewBag.d = values;
+            //    return View(values);
+            //}
+            //else
+            //{
+            //    return RedirectToAction("WriterLogin","Login");
+            //}
+            //
+
+        }
+
+        [HttpPost]
+        public ActionResult WriterProfile(Writer p)
+        {
+
+            ValidationResult result = writerValidator.Validate(p);
+
+            if (result.IsValid)
+            {
+
+                wm.WriterUpdate(p);
+                Session["WriterMail"] = p.WriterMail;
+                return RedirectToAction("WriterProfile");
+            }
+            else
+            {
+                foreach (var item in result.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+
             return View();
         }
 
@@ -31,8 +95,8 @@ namespace MvcProjeKampi.Controllers
             //var writeridinfo = c.Writers.Where(x => x.WriterMail == p).Select(y => y.WriterID).FirstOrDefault(); bunun yerine katmanlı mimariye tasıdım
 
             p = (string)Session["WriterMail"];
-            var writeridinfo=hm.GetWriterIdByMail(p);
-            var values = hm.GetListByWriter(writeridinfo,true);
+            var writeridinfo = hm.GetWriterIdByMail(p);
+            var values = hm.GetListByWriter(writeridinfo, true);
             return View(values);
         }
         [HttpGet]
@@ -92,13 +156,13 @@ namespace MvcProjeKampi.Controllers
 
         }
 
-        public ActionResult AllHeading(int p=1)
+        public ActionResult AllHeading(int p = 1)
         {
-            var head=hm.GetList().ToPagedList(p,5);
+            var head = hm.GetList().ToPagedList(p, 5);
             return View(head);
         }
 
-       
+
 
     }
 }

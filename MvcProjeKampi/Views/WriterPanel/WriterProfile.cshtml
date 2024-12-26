@@ -1,8 +1,66 @@
-﻿
+﻿@model EntityLayer.Concrete.Writer
 @{
     ViewBag.Title = "WriterProfile";
     Layout = "~/Views/Shared/_WriterLayout.cshtml";
 }
+<br />
+<h2 class="text-center my-4">Profil Güncelleme</h2>
 
-<h2>WriterProfile</h2>
+@using (Html.BeginForm("WriterProfile", "WriterPanel", FormMethod.Post))
+{
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        @Html.HiddenFor(x => x.WriterID)
 
+                        <div class="mb-3">
+                            <label for="WriterName" class="form-label">Yazar Adı</label>
+                            @Html.TextBoxFor(x => x.WriterName, new { @class = "form-control", id = "WriterName", placeholder = "Yazar adı girin" })
+                            @Html.ValidationMessageFor(x => x.WriterName, "", new { @style = "color: red;" })
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="WriterSurName" class="form-label">Yazar Soyadı</label>
+                            @Html.TextBoxFor(x => x.WriterSurName, new { @class = "form-control", id = "WriterSurName", placeholder = "Yazar soyadı girin" })
+                            @Html.ValidationMessageFor(x => x.WriterSurName, "", new { @style = "color: red;" })
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="WriterImage" class="form-label">Yazar Görsel</label>
+                            @Html.TextBoxFor(x => x.WriterImage, new { @class = "form-control", id = "WriterImage", placeholder = "Yazar görseli URL'si" })
+                            @Html.ValidationMessageFor(x => x.WriterImage, "", new { @style = "color: red;" })
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="WriterTitle" class="form-label">Yazarın Ünvanı</label>
+                            @Html.TextBoxFor(x => x.WriterTitle, new { @class = "form-control", id = "WriterTitle", placeholder = "Yazar ünvanı girin" })
+                            @Html.ValidationMessageFor(x => x.WriterTitle, "", new { @style = "color: red;" })
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="WriterAbout" class="form-label">Yazarın Hakkında</label>
+                            @Html.TextBoxFor(x => x.WriterAbout, new { @class = "form-control", id = "WriterAbout", placeholder = "Yazar hakkında bilgi girin" })
+                            @Html.ValidationMessageFor(x => x.WriterAbout, "", new { @style = "color: red;" })
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="WriterMail" class="form-label">Yazar Mail</label>
+                            @Html.TextBoxFor(x => x.WriterMail, new { @class = "form-control", id = "WriterMail", placeholder = "Yazar mail adresi girin" })
+                            @Html.ValidationMessageFor(x => x.WriterMail, "", new { @style = "color: red;" })
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="WriterPassword" class="form-label">Yazar Şifre</label>
+                            @Html.TextBoxFor(x => x.WriterPassword, new { @class = "form-control", id = "WriterPassword", type = "password", placeholder = "Yazar şifresi girin" })
+                            @Html.ValidationMessageFor(x => x.WriterPassword, "", new { @style = "color: red;" })
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100 mt-3">Yazarı Güncelle</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
