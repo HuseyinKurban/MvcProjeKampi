@@ -1,5 +1,7 @@
 ﻿@using EntityLayer.Concrete
-@model List<Heading>
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.PagedList<Heading>
 @{
     ViewBag.Title = "AllHeading";
     Layout = "~/Views/Shared/_WriterLayout.cshtml";
@@ -41,8 +43,8 @@
                                 Başlık Adı
                             </th>
                             <th style="width: 40%">
-                                    Oluşturan Yazar
-                                </th>
+                                Oluşturan Yazar
+                            </th>
 
                             <th style="width: 5%" class="text-center">
                                 Kategori
@@ -102,13 +104,13 @@
                                     </small>
                                 </td>
                                 <td>
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item">
-                                                <img alt="Avatar" class="table-avatar" src="@item.Writer.WriterImage">
-                                                <span>@item.Writer.WriterName @item.Writer.WriterSurName</span>
-                                            </li>
-                                        </ul>
-                                    </td>
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item">
+                                            <img alt="Avatar" class="table-avatar" src="@item.Writer.WriterImage">
+                                            <span>@item.Writer.WriterName @item.Writer.WriterSurName</span>
+                                        </li>
+                                    </ul>
+                                </td>
 
 
                                 <td class="project-state">
@@ -126,7 +128,7 @@
                                         </i>
                                         Yorum Yap
                                     </a>
-                               
+
                                 </td>
                             </tr>
 
@@ -140,3 +142,11 @@
     </section>
 </body>
 </html>
+
+@Html.PagedListPager((IPagedList)Model, p => Url.Action("AllHeading", new { p }), new PagedListRenderOptions
+{
+
+    LiElementClasses = new List<string> { "page-link" },
+    MaximumPageNumbersToDisplay = 3
+
+})

@@ -58,6 +58,10 @@ namespace MvcProjeKampi.Controllers
             return RedirectToAction("MyContent");
         }
 
+        public ActionResult ToDoList()
+        {
+            return View();
+        }
 
 
     }

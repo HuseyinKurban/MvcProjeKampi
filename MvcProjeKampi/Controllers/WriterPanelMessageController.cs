@@ -19,23 +19,38 @@ namespace MvcProjeKampi.Controllers
 
         public PartialViewResult MessageListMenu()
         {
-            ViewBag.gelen = mm.GetListInbox().Count();
-            ViewBag.giden = mm.GetListSendbox().Count();
+            string mail = (string)Session["WriterMail"];
+            ViewBag.gelen = mm.GetListInbox(mail).Count();
+            ViewBag.giden = mm.GetListSendbox(mail).Count();
 
             return PartialView();
         }
 
         public ActionResult Inbox()
         {
-            var values = mm.GetListInbox();
-            
-            return View(values);
+            string mail = (string)Session["WriterMail"];
+
+            if (mail != null)
+            {
+                var values = mm.GetListInbox(mail);
+                return View(values);
+            }
+            else
+            { return RedirectToAction("WriterLogin", "Login"); }
         }
 
         public ActionResult Sendbox()
         {
-            var values = mm.GetListSendbox();
-            return View(values);
+            string mail = (string)Session["WriterMail"];
+
+            if (mail != null)
+            {
+                var values = mm.GetListSendbox(mail);
+                return View(values);
+            }
+            else
+            { return RedirectToAction("WriterLogin", "Login"); }
+
         }
 
         public ActionResult GetInboxMessageDetails(int id)
@@ -52,6 +67,8 @@ namespace MvcProjeKampi.Controllers
         [HttpGet]
         public ActionResult NewMessage()
         {
+            string mail = (string)Session["WriterMail"];
+
             return View();
         }
 
@@ -59,9 +76,11 @@ namespace MvcProjeKampi.Controllers
         [ValidateInput(false)]
         public ActionResult NewMessage(Message p)
         {
+            string mail = (string)Session["WriterMail"];
             ValidationResult result = messagevalidator.Validate(p);
             if (result.IsValid)
             {
+                p.SenderMail = mail;
                 p.MessageDate = DateTime.Now;
                 mm.MessageAdd(p);
                 return RedirectToAction("Sendbox");

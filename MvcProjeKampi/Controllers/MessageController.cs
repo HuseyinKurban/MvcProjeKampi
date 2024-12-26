@@ -19,13 +19,15 @@ namespace MvcProjeKampi.Controllers
 
         public ActionResult Inbox()
         {
-            var values = mm.GetListInbox();
+            string mail = (string)Session["WriterMail"];
+            var values = mm.GetListInbox(mail);
             return View(values);
         }
 
         public ActionResult Sendbox()
         {
-            var values = mm.GetListSendbox();
+            string mail = (string)Session["WriterMail"];
+            var values = mm.GetListSendbox(mail);
             return View(values);
         }
 

@@ -42,11 +42,14 @@ namespace MvcProjeKampi.Roles
 
         public override string[] GetRolesForUser(string username)
         {
-
-            //Context c = new Context();
-            //var x = c.Admins.FirstOrDefault(y => y.AdminUserName == username);
-
             var x = adminmanager.GetRole(username);
+
+            if (x == null)
+            {
+                
+                return new string[] { }; 
+            }
+
             return new string[] { x.AdminRole };
         }
 

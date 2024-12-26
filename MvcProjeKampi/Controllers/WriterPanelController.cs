@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PagedList.Mvc;
+using PagedList;
 
 namespace MvcProjeKampi.Controllers
 {
@@ -90,9 +92,9 @@ namespace MvcProjeKampi.Controllers
 
         }
 
-        public ActionResult AllHeading()
+        public ActionResult AllHeading(int p=1)
         {
-            var head=hm.GetList();
+            var head=hm.GetList().ToPagedList(p,5);
             return View(head);
         }
 
