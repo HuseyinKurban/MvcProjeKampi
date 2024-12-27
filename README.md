@@ -45,3 +45,13 @@ Bu proje, popüler sözlük uygulamalarının işleyişini temel alarak gelişti
   - Entity Framework
   - MSSQL
   - HTML/CSS/Bootstrap
+
+
+## Veritabanı Tablosu Ve İlişkileri
+![veritabanı](https://github.com/user-attachments/assets/54ec2353-7106-417b-95cf-f8c82f2e6995)
+
+## Site İndexi
+
+
+
+## Yazar Girişi
