@@ -2526,6 +2526,8 @@
     <Content Include="web\css\simpleLightbox.css" />
     <Content Include="web\css\snow.css" />
     <Content Include="web\css\style.css" />
+    <Content Include="web\images\banner2.jpg" />
+    <Content Include="web\images\banner1.jpg" />
     <Content Include="web\images\banner.jpg" />
     <Content Include="web\images\close.png" />
     <Content Include="web\images\contact.jpg" />
