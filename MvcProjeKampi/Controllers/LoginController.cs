@@ -54,7 +54,6 @@ namespace MvcProjeKampi.Controllers
 
             return View();
         }
-
         [HttpPost]
         public ActionResult WriterLogin(Writer writer)
         {
