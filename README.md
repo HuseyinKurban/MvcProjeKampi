@@ -56,11 +56,11 @@ Bu proje, popüler sözlük uygulamalarının işleyişini temel alarak gelişti
 ## Site İndexi
 ![index](https://github.com/user-attachments/assets/f03624a5-c01c-4ea5-a2ac-30d7631a666b)
 
-## Sözlük
+## Sözlük Tarafı
 ![vitrintarafıgiris](https://github.com/user-attachments/assets/706b6cb9-d66d-4ff4-9a99-5e083014285c)
 ![vitrintarafı](https://github.com/user-attachments/assets/f1a90fec-4417-445f-9030-57d50f9d2520)
 
-## Yazar
+## Yazar Tarafı
 ![yazargiris](https://github.com/user-attachments/assets/053da039-feaf-49da-8a27-5a1f2873759a)
 ![rechatpa](https://github.com/user-attachments/assets/56a3ecc4-1aa1-44bf-bfbe-14f57e4a9594)
 ![yazarprofil](https://github.com/user-attachments/assets/5cb5afa3-5e1e-4a5a-9e8c-4f9d7fb934b0)
@@ -69,7 +69,7 @@ Bu proje, popüler sözlük uygulamalarının işleyişini temel alarak gelişti
 ![mesaj kutus](https://github.com/user-attachments/assets/795c0938-994d-447c-87d3-54f929b2ed3c)
 ![yazaryazılarım](https://github.com/user-attachments/assets/afbc8620-715b-4600-9f2a-3064a2a6d72d)
 
-## Admin
+## Admin Tarafı
 ![loginindexadmin](https://github.com/user-attachments/assets/7c64d999-0951-4242-8e40-e172984f4bf7)
 ![admincategory](https://github.com/user-attachments/assets/32b1a0ac-df1f-4dbe-9ba6-d747d8c75770)
 ![baslıkindex](https://github.com/user-attachments/assets/9984d2e4-8c77-4cd1-b43a-6470134ccc67)
