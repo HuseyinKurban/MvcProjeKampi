@@ -1,0 +1,24 @@
+﻿@using EntityLayer.Concrete
+@model List<Content>
+@{
+    ViewBag.Title = "GetAllContent";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+@using(Html.BeginForm("GetAllContent", "Content", FormMethod.Post))
+{
+    <div class="search-container">
+        <input type="text" id="searchBox" name="p" class="search-box" placeholder="Aranacak kelimeyi girin..." />
+        <button type="submit" class="search-button">Ara</button>
+    </div>
+}
+<br />
+<div class="content-list">
+    @foreach (var item in Model)
+    {
+        <div class="content-item">
+            <p>@item.ContentValue</p>
+        </div>
+    }
+</div>
+

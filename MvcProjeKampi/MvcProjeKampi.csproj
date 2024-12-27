@@ -2651,6 +2651,14 @@
     <Content Include="Views\Home\HomePageTechnology.cshtml" />
     <Content Include="Views\Home\HomePageServices.cshtml" />
     <Content Include="Views\Home\HomePageGallery.cshtml" />
+    <Content Include="Views\Home\HomePageStats.cshtml" />
+    <Content Include="Views\Home\HomePageTestimonials.cshtml" />
+    <Content Include="Views\Home\HomePageContact.cshtml" />
+    <Content Include="Views\Home\HomePageFooter.cshtml" />
+    <Content Include="Views\Home\HomePageScript.cshtml" />
+    <Content Include="Views\Home\HomePageExperience.cshtml" />
+    <Content Include="Views\Home\HomePageLoginAndRegister.cshtml" />
+    <Content Include="Views\Content\GetAllContent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

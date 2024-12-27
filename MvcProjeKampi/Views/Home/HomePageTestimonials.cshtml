@@ -1,0 +1,42 @@
+﻿@using EntityLayer.Concrete
+@model List<Content>
+
+<div class="testimonials py-lg-5 py-4" id="yorumlars">
+    <br />
+    <div class="testimonials-inner container py-lg-4 py-3">
+        <h4 class="sub-tittle-w3 text-uppercase text-center">Projede</h4>
+        <h3 class="tittle-w3 text-uppercase mb-lg-5 mb-3 text-center">Yapılan Son 5 Yorum</h3>
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner" role="listbox">
+
+                @foreach (var item in Model.Select((value, index) => new { value, index }))
+                {
+                    var durum = item.index == 0 ? "active" : ""; // ilk indexi  active olarak başlatıyoruzki boş gelmesin
+                    <div class="carousel-item @durum">
+                        <div class="testimonials_grid">
+                            <div class="testimonials_grid-inn text-uppercase">
+                                <i class="fas fa-quote-left"></i>
+
+                                <p><b style="color:red">@item.value.Heading.HeadingName</b> - @item.value.ContentValue</p> 
+                            </div>
+                            <h3>
+                                @item.value.Writer.WriterName @item.value.Writer.WriterSurName 
+                            </h3>
+                            <label>@item.value.Writer.WriterTitle</label> 
+                        </div>
+                    </div>
+                }
+
+                <a class="carousel-control-prev test" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <span class="fas fa-long-arrow-alt-left"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next test" href="#carouselExampleControls" role="button" data-slide="next">
+                    <span class="fas fa-long-arrow-alt-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

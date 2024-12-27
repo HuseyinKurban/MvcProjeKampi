@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Concrete;
+using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,8 @@ namespace MvcProjeKampi.Controllers
     [AllowAnonymous]
     public class HomeController : Controller
     {
-        ImageFileManager ifm = new ImageFileManager(new EfImageFileDal());
+      
+        Context c = new Context();
         public ActionResult Index()
         {
             return View();
@@ -63,9 +65,54 @@ namespace MvcProjeKampi.Controllers
 
         public PartialViewResult HomePageGallery()
         {
-            var values = ifm.GetList();
+            var values=c.ImageFiles.ToList();
             return PartialView(values);
         }
+
+        public PartialViewResult HomePageStats()
+        {
+
+            ViewBag.totalheadings = c.Headings.Count();
+            ViewBag.totalcontents = c.Contents.Count();
+            ViewBag.totalwriters = c.Writers.Count();
+            ViewBag.totalmessages = c.Messages.Count();
+
+            return PartialView();
+        }
+
+        public PartialViewResult HomePageTestimonials()
+        {
+           var values=c.Contents.OrderByDescending(x=>x.WriterID).Take(5).ToList();
+            return PartialView(values);
+        }
+
+        public PartialViewResult HomePageContact()
+        {
+            
+            return PartialView();
+        }
+
+        public PartialViewResult HomePageFooter()
+        {
+
+            return PartialView();
+        }
+
+        public PartialViewResult HomePageScript()
+        {
+            return PartialView();
+        }
+
+        public PartialViewResult HomePageExperience()
+        {
+            return PartialView();
+        }
+
+        public PartialViewResult HomePageLoginAndRegister()
+        {
+            return PartialView();
+        }
+
 
     }
 }

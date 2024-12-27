@@ -9,7 +9,7 @@ namespace BusinessLayer.Abstract
 {
     public interface IContentService
     {
-        List<Content> GetList();
+        List<Content> GetList(string p);
         //idye göre liste döndürme
         List<Content> GetListByHeadingID(int id);
 
