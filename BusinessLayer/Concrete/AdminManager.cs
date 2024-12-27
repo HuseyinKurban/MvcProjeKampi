@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
+using DataAccessLayer.Migrations;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -20,17 +21,17 @@ namespace BusinessLayer.Concrete
 
         public void AdminAdd(Admin admin)
         {
-            throw new NotImplementedException();
+           _adminDal.Insert(admin);
         }
 
         public void AdminDelete(Admin admin)
         {
-            throw new NotImplementedException();
+            _adminDal.Delete(admin);
         }
 
         public void AdminUpdate(Admin admin)
         {
-            throw new NotImplementedException();
+            _adminDal.Update(admin);
         }
 
         public Admin GetAdmin(string username, string password)
@@ -40,12 +41,12 @@ namespace BusinessLayer.Concrete
 
         public Admin GetByID(int id)
         {
-            throw new NotImplementedException();
+            return _adminDal.Get(x => x.AdminID == id);
         }
 
         public List<Admin> GetList()
         {
-            throw new NotImplementedException();
+            return _adminDal.List();
         }
 
         public Admin GetRole(string username)

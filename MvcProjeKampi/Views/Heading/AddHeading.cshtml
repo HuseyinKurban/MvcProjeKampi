@@ -3,7 +3,7 @@
     ViewBag.Title = "AddHeading";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <h2>Yeni Başlık Ekleme</h2>
 <br />
 
@@ -21,5 +21,22 @@
         <br />
     </div>
 
-    <button class="btn btn-primary">Kaydet</button>
+    <button id="btn1" class="btn btn-primary">Kaydet</button>
 }
+
+<script>
+    $('#btn1').click(function (event) {
+        event.preventDefault(); 
+
+        swal({
+            title: "Ekleme Başarılı",
+            text: "Yönlendiriliyorsunuz",
+            icon: "success",
+        });
+
+        // 3 saniye sonra yönlendiriyorum
+        setTimeout(function () {
+            window.location.href = '@Url.Action("Index", "Heading")';//gidiceği yer
+        }, 3000);
+    });
+</script>

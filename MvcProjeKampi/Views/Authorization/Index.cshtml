@@ -1,0 +1,57 @@
+﻿@using EntityLayer.Concrete
+@model List<Admin>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int count = 0;
+}
+
+<h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333; text-align: center; margin-bottom: 20px;">Admin Yönetimi</h1>
+
+
+<table style="width: 100%; border-collapse: collapse; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); background-color: #fff; border-radius: 8px;">
+    <thead>
+        <tr style="background-color: #007bff; color: white; font-weight: bold;">
+            <th style="padding: 12px; text-align: left;">#</th>
+            <th style="padding: 12px; text-align: left;">Kullanıcı Mail</th>
+            <th style="padding: 12px; text-align: left;">Yetki</th>
+            <th style="padding: 12px; text-align: left;">Durum</th>
+            <th style="padding: 12px; text-align: center;">Sil</th>
+            <th style="padding: 12px; text-align: center;">Yetkisini Düzenle</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            count++;
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 12px;">@count</td>
+                <td style="padding: 12px;">@item.AdminUserName</td>
+                <td style="padding: 12px;">@(item.AdminRole)</td>
+                <td style="padding: 12px;">Aktif</td>
+                <td style="padding: 12px; text-align: center;">
+
+                    <a href="/Authorization/AdminDelete/@item.AdminID" class="btn btn-danger" style="padding: 8px 12px; font-size: 16px;">
+                        Sil
+                    </a>
+                </td>
+                <td style="padding: 12px; text-align: center;">
+
+                    <a href="/Authorization/EditAdmin/@item.AdminID" class="btn btn-warning" style="padding: 8px 12px; font-size: 16px;">
+                      Düzenle
+                    </a>
+                </td>
+       
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+<div style=" margin-top: 20px;">
+
+    <a href="/Authorization/AddAdmin/" class="btn btn-success" style="padding: 10px 20px; font-size: 16px;">
+        Yeni Admin Ekle
+    </a>
+</div>
+

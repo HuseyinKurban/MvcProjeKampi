@@ -55,7 +55,7 @@
                 </a>
             </li>
             <li class="nav-item has-treeview">
-                <a href="#" class="nav-link">
+                <a href="" class="nav-link">
                     <i class="nav-icon fas fa-chart-pie"></i>
                     <p>
                         Grafikler
@@ -64,23 +64,12 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="/Chart/index" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Grafik 1</p>
+                            <p>Kategori - Başlık</p>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Grafik 2</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Grafik 3</p>
-                        </a>
-                    </li>
+
                 </ul>
             </li>
             @if (User.IsInRole("B"))
@@ -90,6 +79,14 @@
                         <i class="nav-icon fas fa-tree"></i>
                         <p>
                             Hakkımızda
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="/Heading/HeadingReport" target="_blank" class="nav-link">
+                        <i class="nav-icon fas fa-bars"></i>
+                        <p>
+                            Raporlar
                         </p>
                     </a>
                 </li>
@@ -110,7 +107,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="/Authorization/Index" class="nav-link">
                         <i class="nav-icon fas fa-calendar-alt"></i>
                         <p>
                             Yetkilendirmeler
@@ -129,7 +126,16 @@
                     <a href="/ErrorPage/Page404" class="nav-link">
                         <i class="nav-icon far fa-envelope"></i>
                         <p>
-                            Hata Sayfaları
+                            Hata Sayfaları 404
+
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="/ErrorPage/Page401" class="nav-link">
+                        <i class="nav-icon far fa-envelope"></i>
+                        <p>
+                            Hata Sayfaları 401
 
                         </p>
                     </a>

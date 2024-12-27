@@ -22,6 +22,12 @@ namespace MvcProjeKampi.Controllers
             return View(values);
         }
 
+        public ActionResult HeadingReport()
+        {
+            var values = hm.GetList();
+            return View(values);
+        }
+
         [HttpGet]
         public ActionResult AddHeading()
         {
@@ -44,13 +50,16 @@ namespace MvcProjeKampi.Controllers
 
             return View();
         }
+
         [HttpPost]
         public ActionResult AddHeading(Heading p)
         {
             p.HeadingDate = DateTime.Now;
+            p.HeadingStatus = true;
             hm.HeadingAdd(p);
-            return RedirectToAction("Index");
+           return View();
         }
+
 
         [HttpGet]
         public ActionResult EditHeading(int id)
