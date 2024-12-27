@@ -1,5 +1,4 @@
-![baslıkindex](https://github.com/user-attachments/assets/b293037a-acb9-4f3a-9365-d4dc5382a19e)![rechatpa](https://github.com/user-attachments/assets/d6db2dae-8458-410b-94b8-461ea095c893)# Sözlük Projesi
-
+# Sözlük Projesi
 Bu proje, popüler sözlük uygulamalarının işleyişini temel alarak geliştirilmiş bir Sözlük sitesi uygulamasıdır. Kullanıcıların başlık oluşturabileceği, başlıklara içerik ekleyebileceği ve mesajlaşma gibi özelliklerden faydalanabileceği bir sistemdir. Admin tarafında ise kategorilerin ve içeriklerin yönetimi gibi kapsamlı işlemler yapılabilmektedir.
 
 ## Proje Özellikleri
@@ -91,7 +90,8 @@ Bu proje, popüler sözlük uygulamalarının işleyişini temel alarak gelişti
 
 
 
-
+![baslıkindex](https://github.com/user-attachments/assets/b293037a-acb9-4f3a-9365-d4dc5382a19e)
+![rechatpa](https://github.com/user-attachments/assets/d6db2dae-8458-410b-94b8-461ea095c893)
 
 
 
