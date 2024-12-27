@@ -62,6 +62,7 @@ Bu proje, popüler sözlük uygulamalarının işleyişini temel alarak gelişti
 ## Yazar Tarafı
 ![yazargiris](https://github.com/user-attachments/assets/053da039-feaf-49da-8a27-5a1f2873759a)
 ![rechatpa](https://github.com/user-attachments/assets/56a3ecc4-1aa1-44bf-bfbe-14f57e4a9594)
+![baslıkindex](https://github.com/user-attachments/assets/b293037a-acb9-4f3a-9365-d4dc5382a19e)
 ![yazarprofil](https://github.com/user-attachments/assets/5cb5afa3-5e1e-4a5a-9e8c-4f9d7fb934b0)
 ![yazarbaslık](https://github.com/user-attachments/assets/7876ac2d-ba82-45e4-9363-d3711077e5b6)
 ![yazartümbaslık](https://github.com/user-attachments/assets/3abf0401-85bf-4400-a39c-645bf99657ae)
@@ -90,8 +91,6 @@ Bu proje, popüler sözlük uygulamalarının işleyişini temel alarak gelişti
 
 
 
-![baslıkindex](https://github.com/user-attachments/assets/b293037a-acb9-4f3a-9365-d4dc5382a19e)
-![rechatpa](https://github.com/user-attachments/assets/d6db2dae-8458-410b-94b8-461ea095c893)
 
 
 
