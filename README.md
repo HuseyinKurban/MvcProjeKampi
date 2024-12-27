@@ -71,7 +71,6 @@ Bu proje, popüler sözlük uygulamalarının işleyişini temel alarak gelişti
 ## Admin Tarafı
 ![loginindexadmin](https://github.com/user-attachments/assets/7c64d999-0951-4242-8e40-e172984f4bf7)
 ![admincategory](https://github.com/user-attachments/assets/32b1a0ac-df1f-4dbe-9ba6-d747d8c75770)
-![baslıkindex](https://github.com/user-attachments/assets/b293037a-acb9-4f3a-9365-d4dc5382a19e)
 ![baslıkindex](https://github.com/user-attachments/assets/9984d2e4-8c77-4cd1-b43a-6470134ccc67)
 ![baslıkguncelle](https://github.com/user-attachments/assets/5ded33c0-9205-44ae-9cc0-29cc918b4e51)
 ![adminyazılar](https://github.com/user-attachments/assets/1b32aff8-aa0a-4fe6-8d8e-7c064b519f83)
@@ -80,7 +79,7 @@ Bu proje, popüler sözlük uygulamalarının işleyişini temel alarak gelişti
 ![kategoribaslıkchart](https://github.com/user-attachments/assets/358ea49d-cb45-432d-80f9-1b78cea7b493)
 ![hakkımızdapopup](https://github.com/user-attachments/assets/ff90613b-a6f5-48ef-8d1e-7d0df30881e2)
 ![adminiletisim](https://github.com/user-attachments/assets/13449e09-73aa-46fe-9a88-273cd0a2780a)
-![Uploading gallery.jpg…]()
+![gallery](https://github.com/user-attachments/assets/e0896a10-f145-410f-b90c-1a8b1bb8084d)
 ![baslıklarreport](https://github.com/user-attachments/assets/9d60d738-cc45-4f3b-832e-ad5dbbbba481)
 ![adminyetkilendirme](https://github.com/user-attachments/assets/888c3855-9b6d-4f3f-9dfd-72c4c1475214)
 ![yetkibazlıerişim](https://github.com/user-attachments/assets/fc0f5ac5-eb7e-40af-96d1-a57a1a793b1c)
