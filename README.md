@@ -1,4 +1,4 @@
-![rechatpa](https://github.com/user-attachments/assets/d6db2dae-8458-410b-94b8-461ea095c893)# Sözlük Projesi
+![baslıkindex](https://github.com/user-attachments/assets/b293037a-acb9-4f3a-9365-d4dc5382a19e)![rechatpa](https://github.com/user-attachments/assets/d6db2dae-8458-410b-94b8-461ea095c893)# Sözlük Projesi
 
 Bu proje, popüler sözlük uygulamalarının işleyişini temel alarak geliştirilmiş bir Sözlük sitesi uygulamasıdır. Kullanıcıların başlık oluşturabileceği, başlıklara içerik ekleyebileceği ve mesajlaşma gibi özelliklerden faydalanabileceği bir sistemdir. Admin tarafında ise kategorilerin ve içeriklerin yönetimi gibi kapsamlı işlemler yapılabilmektedir.
 
@@ -65,6 +65,26 @@ Bu proje, popüler sözlük uygulamalarının işleyişini temel alarak gelişti
 ![yazartümbaslık](https://github.com/user-attachments/assets/3abf0401-85bf-4400-a39c-645bf99657ae)
 ![mesaj kutus](https://github.com/user-attachments/assets/795c0938-994d-447c-87d3-54f929b2ed3c)
 ![yazaryazılarım](https://github.com/user-attachments/assets/afbc8620-715b-4600-9f2a-3064a2a6d72d)
+
+## Admin
+![loginindexadmin](https://github.com/user-attachments/assets/7c64d999-0951-4242-8e40-e172984f4bf7)
+![admincategory](https://github.com/user-attachments/assets/32b1a0ac-df1f-4dbe-9ba6-d747d8c75770)
+![baslıkindex](https://github.com/user-attachments/assets/9984d2e4-8c77-4cd1-b43a-6470134ccc67)
+![baslıkguncelle](https://github.com/user-attachments/assets/5ded33c0-9205-44ae-9cc0-29cc918b4e51)
+![adminyazarlar](https://github.com/user-attachments/assets/a7bf83b2-8321-4106-9cfc-7d6d2c1c2dec)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
