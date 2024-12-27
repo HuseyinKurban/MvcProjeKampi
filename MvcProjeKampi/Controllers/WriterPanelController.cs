@@ -14,6 +14,7 @@ using FluentValidation.Results;
 
 namespace MvcProjeKampi.Controllers
 {
+    [AllowAnonymous]
 
     public class WriterPanelController : Controller
     {

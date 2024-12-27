@@ -59,7 +59,7 @@ namespace MvcProjeKampi.Controllers
         public ActionResult WriterLogin(Writer writer)
         {
             var response = Request["g-recaptcha-response"];
-            const string secret = "kendi site anahtarınız";
+            const string secret = "keyiniz";
 
             var client = new WebClient();
             var reply = client.DownloadString(string.Format("https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}", secret, response));
