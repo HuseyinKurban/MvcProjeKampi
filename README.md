@@ -44,7 +44,7 @@ Bu proje, popüler sözlük uygulamalarının işleyişini temel alarak gelişti
 
 - **Kullanılan Teknolojiler:**
   - Asp.Net MVC5
-  - Entity Framework
+  - Entity Framework Code First
   - MSSQL
   - HTML/CSS/Bootstrap
 
