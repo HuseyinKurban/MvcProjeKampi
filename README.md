@@ -1,5 +1,5 @@
 # Sözlük Projesi
-Bu proje, popüler sözlük uygulamalarının işleyişini temel alarak geliştirilmiş bir Sözlük sitesi uygulamasıdır. Kullanıcıların başlık oluşturabileceği, başlıklara içerik ekleyebileceği ve mesajlaşma gibi özelliklerden faydalanabileceği bir sistemdir. Admin tarafında ise kategorilerin ve içeriklerin yönetimi gibi kapsamlı işlemler yapılabilmektedir.
+Bu proje, popüler sözlük uygulamalarının işleyişini temel alarak geliştirilmiş bir Sözlük sitesi uygulamasıdır. Kullanıcıların başlık oluşturabileceği, başlıklara içerik ekleyebileceği ve mesajlaşma gibi özelliklerden faydalanabileceği bir sistemdir. Admin tarafında ise kategori, başlık yazar , raporlama ve içeriklerin yönetimi gibi bir dizi kapsamlı işlemler yapılabilmektedir.
 
 ## Proje Özellikleri
 
