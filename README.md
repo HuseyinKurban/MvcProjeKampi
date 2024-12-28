@@ -18,7 +18,7 @@ Bu proje, popüler sözlük uygulamalarının işleyişini temel alarak gelişti
 - **Başlıklar:** 
   - Sitedeki tüm başlıklar listelenir ve içerikleri yönetilebilir.
   - Başlıkları aktif/pasif duruma getirme işlemleri yapılabilir.
-- **İçerik:** Yazılan tüm yazılar listeleyebilir ve filtreleyebilir.
+- **İçerik:** Yazılan tüm yazıları listeleyebilir ve filtreleyebilir.
 - **Raporlar:** Başlıklar CSV, Excel veya PDF formatlarında dışa aktarılabilir.
 - **İletişim & Mesajlar:** 
   - Gelen mesajları görüntüleyebilir ve yanıtlayabilir.
