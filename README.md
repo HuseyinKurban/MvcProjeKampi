@@ -98,10 +98,3 @@ Bu proje, popüler sözlük uygulamalarının işleyişini temel alarak gelişti
 
 
 
-
-
-
-
-
-
-
